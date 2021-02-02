@@ -1,5 +1,14 @@
 package misc;
 
+/**
+ * Elements can be compared for equality as in `x = y`
+ * `Q` is the current state of the queue in any method (e.g., it is like the `this` pointer only rather than `this` it is `Q` for readability)
+ * `fresh()` creates an empty queue
+ * `size(Q)` returns the number of elements in the queue
+ * `Q[i]` returns the element at location `i` in `Q` for `0 <= i < size(Q)`
+ * `old(Q)` is the previous state of `Q` to use in `ensures` clauses (e.g., provide a means to compare the pre-method state, `old(Q)`,  to the post method state, `Q`)
+ */
+
 public class Queue {
   Object[] arr;
   int size;
@@ -8,7 +17,9 @@ public class Queue {
 
   /**
    * Creates a queue with a bounded size.
-   * 
+   *
+   * @requires max != 0;
+   *
    * @param max   the size of the queue
    */
   public Queue(int max) {
